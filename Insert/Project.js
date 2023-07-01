@@ -4,6 +4,7 @@ const {
   getElencoData,
 } = require("./getAllData");
 
+
 //DB Connection
 require("./DB.js");
 
