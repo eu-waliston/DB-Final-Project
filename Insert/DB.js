@@ -2,8 +2,8 @@ const mysql = require("mysql");
 
 const con = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "40028922"
+  user: "",
+  password: ""
 });
 
 con.connect(function (err) {
@@ -45,3 +45,4 @@ setTimeout(() => {
     console.log("Elenco Table created");
   });
 }, 3000);
+
