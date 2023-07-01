@@ -13,7 +13,7 @@ fs.readFile("Filmes.json", (err, data) => {
   let filmes = JSON.parse(data);
 
   con.query(
-    "INSERT INTO scrapped (titulo, ano, classificacao, nota, bilheteria, custo) VALUES ('" +
+    "INSERT INTO filme (titulo, ano, classificacao, nota, bilheteria, custo) VALUES ('" +
       filmes[0].info.results.original_title +
       "', '" +
       filmes[0].info.results.release_date +
@@ -40,7 +40,7 @@ fs.readFile("Ator.json", (err, data) => {
   let student = JSON.parse(data);
 
   con.query(
-    "INSERT INTO scrapped (id, nome, sexo, nasc, pais, altura) VALUES ('" +
+    "INSERT INTO ator (id, nome, sexo, nasc, pais, altura) VALUES ('" +
       student[0].info.results.id +
       "', '" +
       student[0].info.results.name +
@@ -66,7 +66,7 @@ fs.readFile("Elenco.json", (err, data) => {
   let student = JSON.parse(data);
 
   con.query(
-    "INSERT INTO scrapped (id, nome, sexo, nasc, pais, altura) VALUES ('" +
+    "INSERT INTO elenco (id, nome, sexo, nasc, pais, altura) VALUES ('" +
       student[0].info.results.id +
       "', '" +
       student[0].info.results.name +
@@ -91,7 +91,7 @@ fs.readFile("Diretor.json", (err, data) => {
   let student = JSON.parse(data);
 
   con.query(
-    "INSERT INTO scrapped (id, nome, pais) VALUES ('" +
+    "INSERT INTO diretor (id, nome, pais) VALUES ('" +
       student[0].info.id +
       "', '" +
       student[0].info.name +
