@@ -13,21 +13,24 @@ fs.readFile("Filmes.json", (err, data) => {
   let filmes = JSON.parse(data);
 
   con.query(
-    "INSERT INTO filme (titulo, ano, classificacao, nota, bilheteria, custo) VALUES ('" +
-      filmes[0].info.results.original_title +
+    "INSERT INTO filme (idFilme ,titulo, ano, classificacao, nota, bilheteria, custo, idFilmeAnterior) VALUES ('" +
+      filmes[0].info.results[0].id +
       "', '" +
-      filmes[0].info.results.release_date +
+      filmes[0].info.results[0].original_title +
       "', '" +
-      filmes[0].info.results.vote_average +
+      filmes[0].info.results[0].release_date +
       "', '" +
-      filmes[0].info.results.popularity +
+      filmes[0].info.results[0].vote_average +
       "', '" +
-      filmes[0].info.results.popularity +
+      filmes[0].info.results[0].popularity +
       "', '" +
-      filmes[0].info.results.popularity +
+      filmes[0].info.results[0].vote_count +
       "', '" +
+      filmes[0].info.results[0].popularity +
+      "', '" +
+      filmes[0].info.results[0].id +
       "');",
-    
+
     function (err, result) {
       if (err) throw err;
       console.log("data inserted");
@@ -40,7 +43,7 @@ fs.readFile("Ator.json", (err, data) => {
   let student = JSON.parse(data);
 
   con.query(
-    "INSERT INTO ator (id, nome, sexo, nasc, pais, altura) VALUES ('" +
+    "INSERT INTO ator (idAtor, nome, sexo, nasc, pais, altura) VALUES ('" +
       student[0].info.results.id +
       "', '" +
       student[0].info.results.name +
@@ -53,7 +56,7 @@ fs.readFile("Ator.json", (err, data) => {
       "', '" +
       student[0].info.results.popularity +
       "');",
-    
+
     function (err, result) {
       if (err) throw err;
       console.log("data inserted");
@@ -66,7 +69,7 @@ fs.readFile("Elenco.json", (err, data) => {
   let student = JSON.parse(data);
 
   con.query(
-    "INSERT INTO elenco (id, nome, sexo, nasc, pais, altura) VALUES ('" +
+    "INSERT INTO elenco (idFilme, nome, sexo, nasc, pais, altura) VALUES ('" +
       student[0].info.results.id +
       "', '" +
       student[0].info.results.name +
@@ -91,7 +94,7 @@ fs.readFile("Diretor.json", (err, data) => {
   let student = JSON.parse(data);
 
   con.query(
-    "INSERT INTO diretor (id, nome, pais) VALUES ('" +
+    "INSERT INTO diretor (idDiretor, nome, pais) VALUES ('" +
       student[0].info.id +
       "', '" +
       student[0].info.name +

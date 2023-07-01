@@ -19,13 +19,13 @@ con.connect(function (err) {
 
 setTimeout(() => {
   const diretor_table =
-    "CREATE TABLE diretor (idDiretor INT NOT NULL PRIMARY KEY,nome VARCHAR(45), pais VARCHAR(255));";
+    "CREATE TABLE diretor (idDiretor INT  PRIMARY KEY AUTO_INCREMENT,nome VARCHAR(45), pais VARCHAR(255));";
   const ator_table =
-    "CREATE TABLE ator (idAtor INT NOT NULL PRIMARY KEY, nome VARCHAR(255),sexo VARCHAR(1), nasc DATE , pais VARCHAR(255), altura DECIMAL(3,2))";
+    "CREATE TABLE ator (idAtor INT  PRIMARY KEY AUTO_INCREMENT, nome VARCHAR(255),sexo VARCHAR(1), nasc DATE , pais VARCHAR(255), altura DECIMAL(3,2))";
   const filme_table =
-    "CREATE  TABLE filme ( idFilme INT NOT NULL PRIMARY KEY, idDiretor INT NOT NULL , titulo VARCHAR(45) NOT NULL , ano INT NOT NULL , classificacao VARCHAR(45) NOT NULL, nota DOUBLE NOT NULL, bilheteria DOUBLE NOT NULL , custo DOUBLE NOT NULL , idFilmeAnterior INT, INDEX fk_filme_diretor1_idx (idDiretor ASC) , CONSTRAINT fk_filme_diretor1 FOREIGN KEY (idDiretor ) REFERENCES diretor (idDiretor ), CONSTRAINT fk_filme_filme1 FOREIGN KEY (idFilmeAnterior ) REFERENCES filme (idFilme ));";
+    "CREATE  TABLE filme ( idFilme INT  PRIMARY KEY AUTO_INCREMENT, idDiretor INT  , titulo VARCHAR(45)  , ano INT  , classificacao VARCHAR(45) , nota DOUBLE , bilheteria DOUBLE  , custo VARCHAR(45)  , idFilmeAnterior INT, INDEX fk_filme_diretor1_idx (idDiretor ASC) , CONSTRAINT fk_filme_diretor1 FOREIGN KEY (idDiretor ) REFERENCES diretor (idDiretor ), CONSTRAINT fk_filme_filme1 FOREIGN KEY (idFilmeAnterior ) REFERENCES filme (idFilme ));";
   const elenco_table =
-    "CREATE  TABLE `elenco` ( `idFilme` INT NOT NULL , `idAtor` INT NOT NULL , PRIMARY KEY (`idFilme`, `idAtor`) , INDEX `fk_elenco_filme_idx` (`idFilme` ASC) , INDEX `fk_elenco_ator_idx` (`idAtor` ASC) , CONSTRAINT `fk_elenco_filme` FOREIGN KEY (`idFilme`) REFERENCES `filme` (`idFilme` ), CONSTRAINT `fk_elenco_ator` FOREIGN KEY (`idAtor` ) REFERENCES `ator` (`idAtor` ));";
+    "CREATE  TABLE elenco ( idFilme INT  , idAtor INT  , PRIMARY KEY (idFilme, idAtor) , INDEX fk_elenco_filme_idx (idFilme ASC) , INDEX fk_elenco_ator_idx (idAtor ASC) , CONSTRAINT fk_elenco_filme FOREIGN KEY (idFilme) REFERENCES filme (idFilme ), CONSTRAINT fk_elenco_ator FOREIGN KEY (idAtor ) REFERENCES ator (idAtor ));";
 
   con.query(diretor_table, function (err, result) {
     if (err) throw err;
@@ -50,4 +50,4 @@ setTimeout(() => {
 
 setTimeout(() => {
   require("./Insert.js");
-}, 8000);
+}, 9000);

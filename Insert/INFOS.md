@@ -1,1 +1,0 @@
->> https://www.w3schools.com/nodejs/nodejs_mysql_insert.asp

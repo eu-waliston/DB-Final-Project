@@ -65,7 +65,7 @@ const getDiretorData = async () => {
       .then((result) => {
         var data = {};
         data.table = [];
-        for (i = 0; i < 120; i++) {
+        for (i = 0; i < 111; i++) {
           var obj = {
             info: result.data,
           };
@@ -73,6 +73,7 @@ const getDiretorData = async () => {
           data.table.push(obj);
         }
         let jsonDAta = JSON.stringify(data.table);
+        
         JSON.parse(jsonDAta)
         fs.writeFile("Diretor.json", jsonDAta, function (err) {
           if (err) throw err;
