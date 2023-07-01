@@ -65,7 +65,7 @@ const getDiretorData = async () => {
       .then((result) => {
         var data = {};
         data.table = [];
-        for (i = 0; i < 100; i++) {
+        for (i = 0; i < 50; i++) {
           var obj = {
             info: result.data,
           };
