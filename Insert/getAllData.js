@@ -57,7 +57,7 @@ const getAtorData = async () => {
     .catch((err) => {});
 };
 const getDiretorData = async () => {
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 100; i++) {
     const url = `https://api.themoviedb.org/3/person/${i}?language=en-US`;
 
     axios
@@ -65,7 +65,7 @@ const getDiretorData = async () => {
       .then((result) => {
         var data = {};
         data.table = [];
-        for (i = 0; i < 50; i++) {
+        for (i = 0; i < 120; i++) {
           var obj = {
             info: result.data,
           };

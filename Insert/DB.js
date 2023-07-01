@@ -10,12 +10,11 @@ con.connect(function (err) {
   if (err) throw err;
   console.log("Connected to MySQL");
 
-  con.query("drop database if exists filmes;")
+  con.query("drop database if exists filmes;");
 
   con.query("CREATE DATABASE filmes");
 
   con.query("USE filmes");
-
 });
 
 setTimeout(() => {
@@ -49,4 +48,6 @@ setTimeout(() => {
   });
 }, 1000);
 
-require("./Insert.js");
+setTimeout(() => {
+  require("./Insert.js");
+}, 8000);

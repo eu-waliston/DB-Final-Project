@@ -1,92 +1,107 @@
-// const mysql = require("mysql");
-// const fs = require("fs");
+const mysql = require("mysql");
+const fs = require("fs");
 
-// const con = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "40028922",
-// });
+const con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "40028922",
+  database: "filmes",
+});
 
-// setTimeout(() => {
-//   fs.readFile("Filmes.json", (err, data) => {
-//     if (err) throw err;
-//     let student = JSON.parse(data);
-//     console.log(student[0].info.results);
-//     con.query("")
-//   });
+fs.readFile("Filmes.json", (err, data) => {
+  if (err) throw err;
+  let filmes = JSON.parse(data);
 
-//   fs.readFile("Ator.json", (err, data) => {
-//     if (err) throw err;
-//     let student = JSON.parse(data);
-//     console.log(student[0].info.results);
+  con.query(
+    "INSERT INTO scrapped (titulo, ano, classificacao, nota, bilheteria, custo) VALUES ('" +
+      filmes[0].info.results.original_title +
+      "', '" +
+      filmes[0].info.results.release_date +
+      "', '" +
+      filmes[0].info.results.vote_average +
+      "', '" +
+      filmes[0].info.results.popularity +
+      "', '" +
+      filmes[0].info.results.popularity +
+      "', '" +
+      filmes[0].info.results.popularity +
+      "', '" +
+      "');",
+    
+    function (err, result) {
+      if (err) throw err;
+      console.log("data inserted");
+    }
+  );
+});
 
-//     con.query("")
-//   });
+fs.readFile("Ator.json", (err, data) => {
+  if (err) throw err;
+  let student = JSON.parse(data);
 
-//   fs.readFile("Elenco.json", (err, data) => {
-//     if (err) throw err;
-//     let student = JSON.parse(data);
-//     console.log(student[0].info.results);
+  con.query(
+    "INSERT INTO scrapped (id, nome, sexo, nasc, pais, altura) VALUES ('" +
+      student[0].info.results.id +
+      "', '" +
+      student[0].info.results.name +
+      "', '" +
+      student[0].info.results.gender +
+      "', '" +
+      student[0].info.results.vote_average +
+      "', '" +
+      student[0].info.results.popularity +
+      "', '" +
+      student[0].info.results.popularity +
+      "');",
+    
+    function (err, result) {
+      if (err) throw err;
+      console.log("data inserted");
+    }
+  );
+});
 
-//     con.query("")
-//   });
+fs.readFile("Elenco.json", (err, data) => {
+  if (err) throw err;
+  let student = JSON.parse(data);
 
-//   fs.readFile("Diretor.json", (err, data) => {
-//     if (err) throw err;
-//     let student = JSON.parse(data);
-//     console.log(student[0].info.results);
+  con.query(
+    "INSERT INTO scrapped (id, nome, sexo, nasc, pais, altura) VALUES ('" +
+      student[0].info.results.id +
+      "', '" +
+      student[0].info.results.name +
+      "', '" +
+      student[0].info.results.gender +
+      "', '" +
+      student[0].info.results.vote_average +
+      "', '" +
+      student[0].info.results.popularity +
+      "', '" +
+      student[0].info.results.popularity +
+      "');",
+    function (err, result) {
+      if (err) throw err;
+      console.log("data inserted");
+    }
+  );
+});
 
-//     con.query("INSERT INTO")
-//   });
+fs.readFile("Diretor.json", (err, data) => {
+  if (err) throw err;
+  let student = JSON.parse(data);
 
-//   // var query = connection.query(
-//   //   "INSERT INTO scrapped (title,date,month,venue,link) VALUES ('" +
-//   //     output.title +
-//   //     "', '" +
-//   //     output.date +
-//   //     "', '" +
-//   //     output.month +
-//   //     "', '" +
-//   //     output.venue +
-//   //     "', '" +
-//   //     output.link +
-//   //     "');",
-//   //   scrape,
-//   //   function (err, result) {
-//   //     if (err) throw err;
-//   //     console.log("data inserted");
-//   //   }
-//   // );
-// }, 7000);
+  con.query(
+    "INSERT INTO scrapped (id, nome, pais) VALUES ('" +
+      student[0].info.id +
+      "', '" +
+      student[0].info.name +
+      "', '" +
+      student[0].info.place_of_birth +
+      "');",
 
-// // fs.readFile("Filmes.json", (err, data) => {
-// //   if (err) throw err;
-// //   let student = JSON.parse(data);
-// //   console.log(student[0].info.results);
-
-// //   // con.connect(function (err) {
-// //   //   if (err) throw err;
-// //   //   console.log("Connected!");
-// //   //   var sql = "INSERT INTO customers (name, address) VALUES ?";
-// //   //   var values = [
-// //   //     ["John", "Highway 71"],
-// //   //     ["Peter", "Lowstreet 4"],
-// //   //     ["Amy", "Apple st 652"],
-// //   //     ["Hannah", "Mountain 21"],
-// //   //     ["Michael", "Valley 345"],
-// //   //     ["Sandy", "Ocean blvd 2"],
-// //   //     ["Betty", "Green Grass 1"],
-// //   //     ["Richard", "Sky st 331"],
-// //   //     ["Susan", "One way 98"],
-// //   //     ["Vicky", "Yellow Garden 2"],
-// //   //     ["Ben", "Park Lane 38"],
-// //   //     ["William", "Central st 954"],
-// //   //     ["Chuck", "Main Road 989"],
-// //   //     ["Viola", "Sideway 1633"],
-// //   //   ];
-// //   //   con.query(sql, [values], function (err, result) {
-// //   //     if (err) throw err;
-// //   //     console.log("Number of records inserted: " + result.affectedRows);
-// //   //   });
-// //   // });
-// // });
+    function (err, result) {
+      if (err) throw err;
+      console.log("data inserted");
+    }
+  );
+});
