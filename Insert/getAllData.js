@@ -56,34 +56,6 @@ const getAtorData = async () => {
     })
     .catch((err) => {});
 };
-const getDiretorData = async () => {
-  for (let i = 0; i < 100; i++) {
-    const url = `https://api.themoviedb.org/3/person/${i}?language=en-US`;
-
-    axios
-      .get(url, options)
-      .then((result) => {
-        let data = {};
-        data.table = [];
-        for (i = 0; i < 1; i++) {
-          var obj = {
-            info: result.data,
-          };
-
-          data.table.push(obj);
-        }
-
-        let jsonDAta = JSON.stringify(data.table);
-        
-        fs.writeFile("Diretor.json", jsonDAta, function (err) {
-          if (err) throw err;
-        });
-      })
-      .catch((err) => {
-        console.log(".");
-      });
-  }
-};
 const getElencoData = async () => {
   const url = "https://api.themoviedb.org/3/trending/person/day?language=en-US";
 
@@ -111,6 +83,5 @@ const getElencoData = async () => {
 module.exports = {
   getMoviesData,
   getAtorData,
-  getDiretorData,
   getElencoData,
 };

@@ -1,7 +1,6 @@
 const {
   getAtorData,
   getMoviesData,
-  getDiretorData,
   getElencoData,
 } = require("./getAllData");
 
@@ -12,7 +11,5 @@ require("./DB.js");
 getAtorData();
 
 getMoviesData();
-
-getDiretorData();
 
 getElencoData();

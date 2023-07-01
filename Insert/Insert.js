@@ -64,17 +64,17 @@ fs.readFile("Ator.json", (err, data) => {
   );
 });
 
-fs.readFile("Diretor.json", (err, data) => {
+
+fs.readFile("Ator.json", (err, data) => {
   if (err) throw err;
   let student = JSON.parse(data);
-
   con.query(
     "INSERT INTO diretor (idDiretor, nome, pais) VALUES ('" +
-      student[0].info.id +
+      student[0].info.results[0].id +
       "', '" +
-      student[0].info.name +
+      student[0].info.results[0].name +
       "', '" +
-      student[0].info.place_of_birth +
+      student[0].info.results[0].known_for[0].release_date +
       "');",
 
     function (err, result) {
@@ -82,4 +82,6 @@ fs.readFile("Diretor.json", (err, data) => {
       console.log("data inserted");
     }
   );
+
+
 });
