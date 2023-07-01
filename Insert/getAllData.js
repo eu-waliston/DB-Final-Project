@@ -57,7 +57,7 @@ const getAtorData = async () => {
     .catch((err) => {});
 };
 const getDiretorData = async () => {
-  for (let i = 0; i < 150; i++) {
+  for (let i = 0; i < 50; i++) {
     const url = `https://api.themoviedb.org/3/person/${i}?language=en-US`;
 
     axios
@@ -73,7 +73,7 @@ const getDiretorData = async () => {
           data.table.push(obj);
         }
         let jsonDAta = JSON.stringify(data.table);
-
+        JSON.parse(jsonDAta)
         fs.writeFile("Diretor.json", jsonDAta, function (err) {
           if (err) throw err;
         });
