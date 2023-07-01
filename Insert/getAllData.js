@@ -1,5 +1,7 @@
 const axios = require("axios");
 const fs = require("fs");
+const path = require("path");
+const  { format, check }  = require('prettier-package-json');
 
 const getAllData = async () => {
   const url =
@@ -28,7 +30,9 @@ const getAllData = async () => {
 
         data.table.push(obj);
       }
-      fs.writeFile("input.json", JSON.stringify(data), function (err) {
+      let jsonDAta = JSON.stringify(data.table);
+
+      fs.writeFile("Filmes.json", jsonDAta, function (err) {
         if (err) throw err;
         console.log("complete");
       });
@@ -39,5 +43,5 @@ const getAllData = async () => {
 };
 
 module.exports = {
-    getAllData
-}
+  getAllData
+};

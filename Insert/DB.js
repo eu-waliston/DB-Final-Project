@@ -1,9 +1,10 @@
 const mysql = require("mysql");
+const fs = require("fs");
 
 const con = mysql.createConnection({
   host: "localhost",
-  user: "",
-  password: ""
+  user: "root",
+  password: "40028922",
 });
 
 con.connect(function (err) {
@@ -44,5 +45,31 @@ setTimeout(() => {
     if (err) throw err;
     console.log("Elenco Table created");
   });
-}, 3000);
+}, 1000);
 
+setTimeout(() => {
+  fs.readFile("Filmes.json", (err, data) => {
+    if (err) throw err;
+    let student = JSON.parse(data);
+    console.log(student[0].info.results);
+  });
+
+  // var query = connection.query(
+  //   "INSERT INTO scrapped (title,date,month,venue,link) VALUES ('" +
+  //     output.title +
+  //     "', '" +
+  //     output.date +
+  //     "', '" +
+  //     output.month +
+  //     "', '" +
+  //     output.venue +
+  //     "', '" +
+  //     output.link +
+  //     "');",
+  //   scrape,
+  //   function (err, result) {
+  //     if (err) throw err;
+  //     console.log("data inserted");
+  //   }
+  // );
+}, 7000);
