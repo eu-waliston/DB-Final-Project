@@ -63,23 +63,25 @@ const getDiretorData = async () => {
     axios
       .get(url, options)
       .then((result) => {
-        var data = {};
+        let data = {};
         data.table = [];
-        for (i = 0; i < 111; i++) {
+        for (i = 0; i < 1; i++) {
           var obj = {
             info: result.data,
           };
 
           data.table.push(obj);
         }
+
         let jsonDAta = JSON.stringify(data.table);
         
-        JSON.parse(jsonDAta)
         fs.writeFile("Diretor.json", jsonDAta, function (err) {
           if (err) throw err;
         });
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.log(".");
+      });
   }
 };
 const getElencoData = async () => {

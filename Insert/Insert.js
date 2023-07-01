@@ -44,44 +44,19 @@ fs.readFile("Ator.json", (err, data) => {
 
   con.query(
     "INSERT INTO ator (idAtor, nome, sexo, nasc, pais, altura) VALUES ('" +
-      student[0].info.results.id +
+      student[0].info.results[0].id +
       "', '" +
-      student[0].info.results.name +
+      student[0].info.results[0].name +
       "', '" +
-      student[0].info.results.gender +
+      student[0].info.results[0].gender +
       "', '" +
-      student[0].info.results.vote_average +
+      student[0].info.results[0].known_for[0].release_date +
       "', '" +
-      student[0].info.results.popularity +
+      student[0].info.results[0].popularity +
       "', '" +
-      student[0].info.results.popularity +
+      student[0].info.results[0].popularity +
       "');",
 
-    function (err, result) {
-      if (err) throw err;
-      console.log("data inserted");
-    }
-  );
-});
-
-fs.readFile("Elenco.json", (err, data) => {
-  if (err) throw err;
-  let student = JSON.parse(data);
-
-  con.query(
-    "INSERT INTO elenco (idFilme, nome, sexo, nasc, pais, altura) VALUES ('" +
-      student[0].info.results.id +
-      "', '" +
-      student[0].info.results.name +
-      "', '" +
-      student[0].info.results.gender +
-      "', '" +
-      student[0].info.results.vote_average +
-      "', '" +
-      student[0].info.results.popularity +
-      "', '" +
-      student[0].info.results.popularity +
-      "');",
     function (err, result) {
       if (err) throw err;
       console.log("data inserted");
