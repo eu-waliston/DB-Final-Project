@@ -64,10 +64,10 @@ fs.readFile("Ator.json", (err, data) => {
   );
 });
 
-
 fs.readFile("Ator.json", (err, data) => {
   if (err) throw err;
   let student = JSON.parse(data);
+
   con.query(
     "INSERT INTO diretor (idDiretor, nome, pais) VALUES ('" +
       student[0].info.results[0].id +
@@ -82,6 +82,4 @@ fs.readFile("Ator.json", (err, data) => {
       console.log("data inserted");
     }
   );
-
-
 });
