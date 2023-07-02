@@ -73,23 +73,23 @@ const completedTasksChart = {
 export const statisticsChartsData = [
   {
     color: "blue",
-    title: "Website View",
-    description: "Last Campaign Performance",
-    footer: "campaign sent 2 days ago",
+    title: "Visitas ao Site",
+    description: "Ultimas visitas registradas",
+    footer: "Dados enviados 2 dias atrás",
     chart: websiteViewsChart,
   },
   {
     color: "pink",
-    title: "Daily Sales",
-    description: "15% increase in today sales",
-    footer: "updated 4 min ago",
+    title: "Visitas Diárias",
+    description: "15% De aumento",
+    footer: "Atualizado a 4 minutos",
     chart: dailySalesChart,
   },
   {
     color: "green",
-    title: "Completed Tasks",
-    description: "Last Campaign Performance",
-    footer: "just updated",
+    title: "Resultados Completos",
+    description: "Opniões a respeito dos filmes",
+    footer: "Dados Lançados a cada 3 dias",
     chart: completedTasksChart,
   },
 ];
