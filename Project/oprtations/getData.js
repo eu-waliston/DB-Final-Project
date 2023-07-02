@@ -22,7 +22,7 @@ const getMovieData = (id) => {
         data.table.push(obj);
       }
       let resultData = JSON.stringify(data.table);
-      fs.writeFile("Filme.json", resultData, (err) => {
+      fs.writeFile("./data/Filme.json", resultData, (err) => {
         if (err) throw err;
       });
     })
@@ -43,7 +43,7 @@ const getPersonData = (id) => {
       }
       let resultData = JSON.stringify(data.table);
 
-      fs.writeFile("Pessoa.json", resultData, (err) => {
+      fs.writeFile("./data/Pessoa.json", resultData, (err) => {
         if (err) throw err;
       });
     })
@@ -67,7 +67,7 @@ const getElencoData = (id) => {
       }
       let jsonDAta = JSON.stringify(data.table);
 
-      fs.writeFile("Elenco.json", jsonDAta, function (err) {
+      fs.writeFile("./data/Elenco.json", jsonDAta, function (err) {
         if (err) throw err;
       });
     })
