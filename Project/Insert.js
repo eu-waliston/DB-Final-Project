@@ -13,14 +13,14 @@ fs.readFile("Filme.json", (err, data) => {
   let filmes = JSON.parse(data);
 
   con.query(
-    "INSERT INTO filme (idFilme ,titulo, ano, classificacao, nota, bilheteria, custo, idFilmeAnterior) VALUES ('" +
+    "INSERT INTO filme (idFilme ,titulo, ano, popularidade, nota, bilheteria, custo, idFilmeAnterior) VALUES ('" +
       filmes[0].info.results[0].id +
       "', '" +
       filmes[0].info.results[0].original_title +
       "', '" +
       filmes[0].info.results[0].release_date +
       "', '" +
-      filmes[0].info.results[0].genre_ids +
+      filmes[0].info.results[0].vote_average +
       "', '" +
       filmes[0].info.results[0].popularity +
       "', '" +
