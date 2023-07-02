@@ -51,11 +51,17 @@
   width: 150px;
   position: relative;
   left: 20%;
+  color: #006987;
+
 }
 
 .left--menu-itens button:hover {
   opacity: 0.9;
-  transition: 0.8s;
+  color: #034a5e;
+}
+
+.left--menu-itens button:active {
+  transform: translateY(3px);
 }
 
 .left--menu p {
