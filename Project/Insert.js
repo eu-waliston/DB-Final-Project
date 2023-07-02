@@ -38,9 +38,9 @@ fs.readFile("Elenco.json", (err, data) => {
 
   con.query(
     "INSERT INTO elenco (idAtor, idFilme) VALUES ('" +
-      elenco[0].info.results[0].id +
+      elenco[0].info.results[0].known_for.id +
       "', '" +
-      elenco[0].info.results[0].id +
+      elenco[0].info.results[0].known_for.id +
       "');",
 
     function (err, result) {
