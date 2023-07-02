@@ -6,7 +6,7 @@ Projeto final da disciplina: Fundamentos de Banco de Dados
 
 
 
-### Sobre O projeto:
+### Sobre o projeto:
 
 O objetivo principal do trabalho é a criação de um
 dashboard para visualização de dados a respeito de
