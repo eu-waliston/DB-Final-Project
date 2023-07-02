@@ -37,3 +37,6 @@ operationsRouter.get("/insert", async (req, res) => {
     console.log({ message: error });
   }
 });
+
+
+module.exports = operationsRouter;
