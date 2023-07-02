@@ -20,7 +20,7 @@ fs.readFile("Filme.json", (err, data) => {
       "', '" +
       filmes[0].info.results[0].release_date +
       "', '" +
-      filmes[0].info.results[0].vote_average +
+      filmes[0].info.results[0].genre_ids +
       "', '" +
       filmes[0].info.results[0].popularity +
       "', '" +
