@@ -12,7 +12,6 @@ fs.readFile("Filme.json", (err, data) => {
   if (err) throw err;
   let filmes = JSON.parse(data);
 
-  "CREATE  TABLE filme ( idFilme INT NOT NULL , idDiretor INT NOT NULL , titulo VARCHAR(45) NOT NULL , ano INT NOT NULL , nota DOUBLE NOT NULL, popularidade INT NOT NULL, PRIMARY KEY (idFilme) ,CONSTRAINT fk_filme_diretor1 FOREIGN KEY (idDiretor ) REFERENCES pessoa (idPessoa ));";
   con.query(
     "INSERT INTO filme (idFilme ,titulo, ano,nota, popularidade) VALUES ('" +
       filmes[0].info.results[0].id +
@@ -64,12 +63,14 @@ fs.readFile("Pessoa.json", (err, data) => {
   let student = JSON.parse(data);
 
   con.query(
-    "INSERT INTO diretor (idDiretor, nome, pais) VALUES ('" +
+    "INSERT INTO pessoa (idPessoa, nome,sexo,departamento) VALUES ('" +
       student[0].info.results[0].id +
       "', '" +
       student[0].info.results[0].name +
       "', '" +
-      student[0].info.results[0].known_for[0].release_date +
+      student[0].info.results[0].gender +
+      "', '" +
+      student[0].info.results[0].known_for_department +
       "');",
 
     function (err, result) {
