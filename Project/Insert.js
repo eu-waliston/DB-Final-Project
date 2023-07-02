@@ -40,15 +40,7 @@ fs.readFile("Elenco.json", (err, data) => {
     "INSERT INTO elenco (idAtor, idFilme) VALUES ('" +
       elenco[0].info.results[0].id +
       "', '" +
-      elenco[0].info.results[0].name +
-      "', '" +
-      elenco[0].info.results[0].gender +
-      "', '" +
-      elenco[0].info.results[0].known_for[0].release_date +
-      "', '" +
-      elenco[0].info.results[0].popularity +
-      "', '" +
-      elenco[0].info.results[0].popularity +
+      elenco[0].info.results[0].id +
       "');",
 
     function (err, result) {
