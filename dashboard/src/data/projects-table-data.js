@@ -1,7 +1,7 @@
 export const projectsTableData = [
   {
-    img: "/img/logo-xd.svg",
-    name: "Material XD Version",
+    img: "/img/playbuttonclear.svg",
+    name: "A Pequena Sereia",
     members: [
       { img: "/img/team-1.jpeg", name: "Romina Hadid" },
       { img: "/img/team-2.jpeg", name: "Ryan Tompson" },
@@ -12,8 +12,8 @@ export const projectsTableData = [
     completion: 60,
   },
   {
-    img: "/img/logo-atlassian.svg",
-    name: "Add Progress Track",
+    img: "/img/playbuttonclear.svg",
+    name: "A Elefanta do Mágico",
     members: [
       { img: "/img/team-2.jpeg", name: "Ryan Tompson" },
       { img: "/img/team-4.jpeg", name: "Alexander Smith" },
@@ -22,8 +22,8 @@ export const projectsTableData = [
     completion: 10,
   },
   {
-    img: "/img/logo-slack.svg",
-    name: "Fix Platform Errors",
+    img: "/img/playbuttonclear.svg",
+    name: "Excluídos",
     members: [
       { img: "/img/team-3.jpeg", name: "Jessica Doe" },
       { img: "/img/team-1.jpeg", name: "Romina Hadid" },
@@ -32,8 +32,8 @@ export const projectsTableData = [
     completion: 100,
   },
   {
-    img: "/img/logo-spotify.svg",
-    name: "Launch our Mobile App",
+    img: "/img/playbuttonclear.svg",
+    name: "Já Era Hora",
     members: [
       { img: "/img/team-4.jpeg", name: "Alexander Smith" },
       { img: "/img/team-3.jpeg", name: "Jessica Doe" },
@@ -44,15 +44,15 @@ export const projectsTableData = [
     completion: 100,
   },
   {
-    img: "/img/logo-jira.svg",
-    name: "Add the New Pricing Page",
+    img: "/img/playbuttonclear.svg",
+    name: "Luther: O Cair da Noite",
     members: [{ img: "/img/team-4.jpeg", name: "Alexander Smith" }],
     budget: "$500",
     completion: 25,
   },
   {
-    img: "/img/logo-invision.svg",
-    name: "Redesign New Online Shop",
+    img: "/img/playbuttonclear.svg",
+    name: "Meu Nome é Chihiro",
     members: [
       { img: "/img/team-1.jpeg", name: "Romina Hadid" },
       { img: "/img/team-4.jpeg", name: "Alexander Smith" },
