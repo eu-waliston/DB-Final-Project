@@ -43,6 +43,6 @@ setTimeout(() => {
   });
 }, 1000);
 
-setTimeout(() => {
-  require("./Insert.js");
-}, 9000);
+// setTimeout(() => {
+//   require("./Insert.js");
+// }, 9000);

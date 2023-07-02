@@ -1,11 +1,7 @@
-//DB Connection
 require("./DB.js");
 
-const { getMoviesData, getAtorData, getElencoData } = require("./getData.js");
+const { getElencoData, getMovieData,getPersonData  } = require("./getData.js");
 
-//Get All data end save in a JSON file
-getAtorData();
-
-getMoviesData();
-
-getElencoData();
+getElencoData(12)
+getMovieData(13)
+getPersonData(13)
