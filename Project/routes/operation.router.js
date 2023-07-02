@@ -17,6 +17,7 @@ operationsRouter.get("/data", async (req, res) => {
     getElencoData(22);
     getMovieData(22);
     getPersonData(22);
+    res.status(200).sendFile(path.join(__dirname, "..", "public", "home.html"))
   } catch (error) {
     console.log({ message: error });
   }
@@ -25,6 +26,7 @@ operationsRouter.get("/data", async (req, res) => {
 operationsRouter.get("/create", async (req, res) => {
   try {
     createTable();
+    res.status(200).sendFile(path.join(__dirname, "..", "public", "home.html"))
   } catch (error) {
     console.log({ message: error });
   }
@@ -33,6 +35,7 @@ operationsRouter.get("/create", async (req, res) => {
 operationsRouter.get("/createDB", async (req, res) => {
   try {
     createDB();
+    res.status(200).sendFile(path.join(__dirname, "..", "public", "home.html"))
   } catch (error) {
     console.log({ message: error });
   }
@@ -41,6 +44,7 @@ operationsRouter.get("/createDB", async (req, res) => {
 operationsRouter.get("/insert", async (req, res) => {
   try {
     insertData();
+    res.status(200).sendFile(path.join(__dirname, "..", "public", "home.html"))
   } catch (error) {
     console.log({ message: error });
   }
