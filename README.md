@@ -31,3 +31,7 @@ filmes.
     - CSS
     - MySQL
 
+### Authors
+
+- [We Santos](https://github.com/wal-wizard)
+- [Alejandro Brites](https://github.com/AlejandroBrites)
