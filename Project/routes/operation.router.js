@@ -1,7 +1,7 @@
 const con = require("../config/DB");
 const path = require("path");
 
-const { createTable } = require("../oprtations/create");
+const { createTable, createDB } = require("../oprtations/create");
 const {
   getElencoData,
   getMovieData,
@@ -25,6 +25,14 @@ operationsRouter.get("/data", async (req, res) => {
 operationsRouter.get("/create", async (req, res) => {
   try {
     createTable();
+  } catch (error) {
+    console.log({ message: error });
+  }
+});
+
+operationsRouter.get("/createDB", async (req, res) => {
+  try {
+    createDB();
   } catch (error) {
     console.log({ message: error });
   }

@@ -5,12 +5,7 @@ function createTable() {
     if (err) {
       console.log({ message: err });
     } else {
-      con.query("drop database if exists filmes;");
-
-      con.query("CREATE DATABASE filmes");
-
       con.query("USE filmes");
-      console.log("Connected to MySQL");
 
       const pessoa_table =
         "CREATE  TABLE pessoa ( idPessoa INT NOT NULL AUTO_INCREMENT , nome VARCHAR(255) NOT NULL , sexo INT NULL , departamento VARCHAR(255) NULL , PRIMARY KEY (idPessoa));";
@@ -39,6 +34,15 @@ function createTable() {
   });
 }
 
+function createDB() {
+  con.query("drop database if exists filmes;");
+
+  con.query("CREATE DATABASE filmes");
+
+  con.query("USE filmes");
+  console.log("Connected to MySQL");
+}
 module.exports = {
   createTable,
+  createDB,
 };

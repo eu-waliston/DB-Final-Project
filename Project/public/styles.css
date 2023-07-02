@@ -36,6 +36,11 @@
   top: 50px;
 }
 
+form {
+  display: grid;
+  gap: 20px;
+}
+
 .left--menu-itens h1 {
     text-align: center;
   text-transform: uppercase;
@@ -50,7 +55,7 @@
   cursor: pointer;
   width: 150px;
   position: relative;
-  left: 20%;
+  left: 25%;
   color: #006987;
 
 }
