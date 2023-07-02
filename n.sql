@@ -1,1 +1,4 @@
-CREATE  TABLE elenco ( idFilme INT NOT NULL , idAtor INT NOT NULL , PRIMARY KEY (idFilme, idAtor) , INDEX fk_elenco_filme_idx (idFilme ASC) ,INDEX fk_elenco_ator_idx (idAtor ASC) , CONSTRAINT fk_elenco_filme FOREIGN KEY (idFilme ) REFERENCES filme (idFilme ), CONSTRAINT fk_elenco_ator FOREIGN KEY (idAtor ) REFERENCES ator (idAtor ));
+
+
+
+    
