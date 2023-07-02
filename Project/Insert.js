@@ -12,8 +12,9 @@ fs.readFile("Filme.json", (err, data) => {
   if (err) throw err;
   let filmes = JSON.parse(data);
 
+  "CREATE  TABLE filme ( idFilme INT NOT NULL , idDiretor INT NOT NULL , titulo VARCHAR(45) NOT NULL , ano INT NOT NULL , nota DOUBLE NOT NULL, popularidade INT NOT NULL, PRIMARY KEY (idFilme) ,CONSTRAINT fk_filme_diretor1 FOREIGN KEY (idDiretor ) REFERENCES pessoa (idPessoa ));";
   con.query(
-    "INSERT INTO filme (idFilme ,titulo, ano, popularidade, nota, bilheteria, custo, idFilmeAnterior) VALUES ('" +
+    "INSERT INTO filme (idFilme ,titulo, ano,nota, popularidade) VALUES ('" +
       filmes[0].info.results[0].id +
       "', '" +
       filmes[0].info.results[0].original_title +
@@ -23,12 +24,6 @@ fs.readFile("Filme.json", (err, data) => {
       filmes[0].info.results[0].vote_average +
       "', '" +
       filmes[0].info.results[0].popularity +
-      "', '" +
-      filmes[0].info.results[0].vote_count +
-      "', '" +
-      filmes[0].info.results[0].popularity +
-      "', '" +
-      filmes[0].info.results[0].id +
       "');",
 
     function (err, result) {
