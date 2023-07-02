@@ -11,37 +11,37 @@ export const ordersOverviewData = [
   {
     icon: BellIcon,
     color: "text-green-500",
-    title: "$2400, Design changes",
+    title: "$2400, Compras Online",
     description: "22 DEC 7:20 PM",
   },
   {
     icon: PlusCircleIcon,
     color: "text-red-500",
-    title: "New order #1832412",
+    title: "Mais Visitas ao Site",
     description: "21 DEC 11 PM",
   },
   {
     icon: ShoppingCartIcon,
     color: "text-blue-500",
-    title: "Server payments for April",
+    title: "Compraram um plano da API",
     description: "21 DEC 9:34 PM",
   },
   {
     icon: CreditCardIcon,
     color: "text-orange-500",
-    title: "New card added for order #4395133",
+    title: "Novos Cadastros ",
     description: "20 DEC 2:20 AM",
   },
   {
     icon: LockOpenIcon,
     color: "text-pink-500",
-    title: "Unlock packages for development",
+    title: "Novos Filmes no catalogo",
     description: "18 DEC 4:54 AM",
   },
   {
     icon: BanknotesIcon,
     color: "text-blue-gray-900",
-    title: "New order #9583120",
+    title: "Novos Pedidos",
     description: "17 DEC",
   },
 ];
