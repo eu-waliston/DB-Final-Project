@@ -13,7 +13,7 @@ fs.readFile("Filme.json", (err, data) => {
   let filmes = JSON.parse(data);
 
   con.query(
-    "INSERT INTO filme (idFilme ,titulo, ano,nota, popularidade) VALUES ('" +
+    "INSERT INTO filme (idFilme,titulo, ano,nota, popularidade) VALUES ('" +
       filmes[0].info.tv_episode_results[0].id +
       "', '" +
       filmes[0].info.tv_episode_results[0].name +
@@ -32,16 +32,15 @@ fs.readFile("Filme.json", (err, data) => {
   );
 });
 
-
 fs.readFile("Elenco.json", (err, data) => {
   if (err) throw err;
   let elenco = JSON.parse(data);
 
   con.query(
     "INSERT INTO elenco (idAtor, idFilme) VALUES ('" +
-      elenco[0].info.results[0].known_for_department +
+      elenco[0].info.id +
       "', '" +
-      elenco[0].info.results[0].known_for_department +
+      elenco[0].info.id +
       "');",
 
     function (err, result) {
@@ -57,13 +56,13 @@ fs.readFile("Pessoa.json", (err, data) => {
 
   con.query(
     "INSERT INTO pessoa (idPessoa, nome,sexo,departamento) VALUES ('" +
-      pessoa[0].info.results[0].id +
+      pessoa[0].info.id +
       "', '" +
-      pessoa[0].info.results[0].name +
+      pessoa[0].info.name +
       "', '" +
-      pessoa[0].info.results[0].gender +
+      pessoa[0].info.gender +
       "', '" +
-      pessoa[0].info.results[0].known_for_department +
+      pessoa[0].info.known_for_department +
       "');",
 
     function (err, result) {

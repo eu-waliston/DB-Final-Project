@@ -43,7 +43,7 @@ const getPersonData = (id) => {
       }
       let resultData = JSON.stringify(data.table);
 
-      fs.writeFile("Person.json", resultData, (err) => {
+      fs.writeFile("Pessoa.json", resultData, (err) => {
         if (err) throw err;
       });
     })

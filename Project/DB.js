@@ -19,10 +19,10 @@ con.connect(function (err) {
 
 setTimeout(() => {
   const pessoa_table =
-    "CREATE  TABLE pessoa ( idPessoa INT NOT NULL , nome VARCHAR(255) NOT NULL , sexo INT NULL , departamento VARCHAR(255) NULL , PRIMARY KEY (idPessoa));";
+    "CREATE  TABLE pessoa ( idPessoa INT NOT NULL AUTO_INCREMENT , nome VARCHAR(255) NOT NULL , sexo INT NULL , departamento VARCHAR(255) NULL , PRIMARY KEY (idPessoa));";
 
   const filme_table =
-    "CREATE  TABLE filme ( idFilme INT NOT NULL , idDiretor INT NOT NULL , titulo VARCHAR(45) NOT NULL , ano INT NOT NULL , nota DOUBLE NOT NULL, popularidade INT NOT NULL, PRIMARY KEY (idFilme) ,CONSTRAINT fk_filme_diretor1 FOREIGN KEY (idDiretor ) REFERENCES pessoa (idPessoa ));";
+    "CREATE  TABLE filme ( idFilme INT NOT NULL  , idDiretor INT NOT NULL AUTO_INCREMENT , titulo VARCHAR(45) NOT NULL , ano VARCHAR(255) NOT NULL , nota DOUBLE NOT NULL, popularidade INT NOT NULL, PRIMARY KEY (idFilme) ,CONSTRAINT fk_filme_diretor1 FOREIGN KEY (idDiretor ) REFERENCES pessoa (idPessoa ));";
 
   const elenco_table =
     "CREATE  TABLE elenco ( idFilme INT NOT NULL , idAtor INT NOT NULL , PRIMARY KEY (idFilme, idAtor) , CONSTRAINT fk_elenco_filme FOREIGN KEY (idFilme ) REFERENCES filme (idFilme ), CONSTRAINT fk_elenco_ator FOREIGN KEY (idAtor ) REFERENCES pessoa (idPessoa ));";
