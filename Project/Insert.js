@@ -8,7 +8,7 @@ const con = mysql.createConnection({
   database: "filmes",
 });
 
-fs.readFile("Filmes.json", (err, data) => {
+fs.readFile("Filme.json", (err, data) => {
   if (err) throw err;
   let filmes = JSON.parse(data);
 
@@ -64,7 +64,7 @@ fs.readFile("Ator.json", (err, data) => {
   );
 });
 
-fs.readFile("Ator.json", (err, data) => {
+fs.readFile("Pessoa.json", (err, data) => {
   if (err) throw err;
   let student = JSON.parse(data);
 
