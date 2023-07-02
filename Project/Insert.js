@@ -38,7 +38,7 @@ fs.readFile("Filme.json", (err, data) => {
   );
 });
 
-fs.readFile("Ator.json", (err, data) => {
+fs.readFile("Elenco.json", (err, data) => {
   if (err) throw err;
   let student = JSON.parse(data);
 
