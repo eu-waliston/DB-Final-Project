@@ -32,26 +32,23 @@ fs.readFile("Filme.json", (err, data) => {
   );
 });
 
-"CREATE  TABLE elenco ( idFilme INT NOT NULL , idAtor INT NOT NULL , PRIMARY KEY (idFilme, idAtor) , CONSTRAINT fk_elenco_filme FOREIGN KEY (idFilme ) REFERENCES filme (idFilme ), CONSTRAINT fk_elenco_ator FOREIGN KEY (idAtor ) REFERENCES pessoa (idPessoa ));";
-
-
 fs.readFile("Elenco.json", (err, data) => {
   if (err) throw err;
-  let student = JSON.parse(data);
+  let elenco = JSON.parse(data);
 
   con.query(
     "INSERT INTO elenco (idAtor, idFilme) VALUES ('" +
-      student[0].info.results[0].id +
+      elenco[0].info.results[0].id +
       "', '" +
-      student[0].info.results[0].name +
+      elenco[0].info.results[0].name +
       "', '" +
-      student[0].info.results[0].gender +
+      elenco[0].info.results[0].gender +
       "', '" +
-      student[0].info.results[0].known_for[0].release_date +
+      elenco[0].info.results[0].known_for[0].release_date +
       "', '" +
-      student[0].info.results[0].popularity +
+      elenco[0].info.results[0].popularity +
       "', '" +
-      student[0].info.results[0].popularity +
+      elenco[0].info.results[0].popularity +
       "');",
 
     function (err, result) {
