@@ -27,7 +27,7 @@ const getMoviesData = async () => {
       }
       let jsonDAta = JSON.stringify(data.table);
 
-      fs.writeFile("Filmes.json", jsonDAta, function (err) {
+      fs.writeFile("Filme.json", jsonDAta, function (err) {
         if (err) throw err;
       });
     })
@@ -50,7 +50,7 @@ const getAtorData = async () => {
       }
       let jsonDAta = JSON.stringify(data.table);
 
-      fs.writeFile("Ator.json", jsonDAta, function (err) {
+      fs.writeFile("Pessoa.json", jsonDAta, function (err) {
         if (err) throw err;
       });
     })
