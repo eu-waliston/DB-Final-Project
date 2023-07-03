@@ -84,21 +84,21 @@ form {
   float: right;
   height: 100vh;
 
-  width: 100%;
+  width: 78.5%;
 }
+
 
 /*================ Charts Style ==============*/
 
-.charts--container {
-display: grid;
-grid-template-columns: repeat(2, 700px);
-gap: 30px;
-justify-content: center;
-align-items: center;
-align-content: center;
+.chart-iten-1 {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top: 50px;
 }
-
-#myChart, #myChart2, #myChart3 {
+.chart-iten-2 {}
+#myChart, #myChart3 {
   width: 400px !important;
   height: 400px !important;
+
 }
