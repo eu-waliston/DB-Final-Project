@@ -87,6 +87,18 @@ form {
   width: 78.5%;
 }
 
+.charts--container h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  color: var(---background-default);
+}
+.icon {
+  width: 80px;
+  position: relative;
+  top: 20px;
+}
 
 /*================ Charts Style ==============*/
 
@@ -96,9 +108,20 @@ form {
   position: relative;
   top: 50px;
 }
-.chart-iten-2 {}
-#myChart, #myChart3 {
+.chart-iten-2 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 150px;
+}
+
+#myChart2 {
+  width: 800px !important;
+  height: 500px !important;
+}
+
+#myChart,
+#myChart3 {
   width: 400px !important;
   height: 400px !important;
-
 }
