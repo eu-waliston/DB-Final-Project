@@ -10,7 +10,7 @@ function insertData() {
 
       con.query(
         "INSERT INTO filmes (idFilme,idDiretor,titulo, ano,nota,popularidade) VALUES ('" +
-          filmes[0].info.belongs_to_collection.id +
+          filmes[0].info.id +
           "', '" +
           filmes[0].info.id +
           "', '" +
