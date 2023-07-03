@@ -2,7 +2,7 @@ const con = require("../config/DB");
 const fs = require("fs");
 
 function insertData() {
-  fs.readFile("Filme.json", (err, data) => {
+  fs.readFile("./data/Filme.json", (err, data) => {
     if (err) {
       console.log({ message: err });
     } else {
@@ -29,7 +29,7 @@ function insertData() {
     }
   });
 
-  fs.readFile("Elenco.json", (err, data) => {
+  fs.readFile("./data/Elenco.json", (err, data) => {
     if (err) {
       console.log({ message: err });
     } else {
@@ -49,7 +49,7 @@ function insertData() {
     }
   });
 
-  fs.readFile("Pessoa.json", (err, data) => {
+  fs.readFile("./data/Pessoa.json", (err, data) => {
     if (err) {
       console.log({ message: err });
     } else {

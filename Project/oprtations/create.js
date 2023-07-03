@@ -36,6 +36,7 @@ function createDB() {
   con.query("USE filmes");
   console.log("DATABASE CREATED");
 }
+
 module.exports = {
   createTable,
   createDB,
