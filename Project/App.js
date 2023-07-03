@@ -12,8 +12,6 @@ app.set("view engine", "ejs");
 
 //DB Connection
 const con = require("./config/DB");
-con.query("drop database if exists filmes;");
-con.query("CREATE DATABASE filmes");
 con.query("USE filmes");
 console.log("Connected to MySQL");
 
