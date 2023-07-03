@@ -11,7 +11,7 @@ const options = {
 };
 
 const getMovieData = (id) => {
-  let URL = `https://api.themoviedb.org/3/find/${id}?external_source=tvdb_id`;
+  let URL = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
   axios
     .get(URL, options)
     .then((result) => {
