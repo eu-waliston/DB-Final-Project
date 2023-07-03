@@ -4,7 +4,7 @@ const rootRouter = express.Router();
 
 rootRouter.get("/", async (req, res) => {
   try {
-    res.status(200).sendFile(path.join(__dirname, "..", "public", "home.html"));
+    res.status(200).render(path.join(__dirname, "..", "public", "home.ejs"));
   } catch (error) {
     console.log({ message: error });
   }
