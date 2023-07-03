@@ -4,13 +4,13 @@ function createTable() {
   con.query("USE filmes");
 
   const pessoa_table =
-    "CREATE  TABLE pessoa ( idPessoa INT NOT NULL AUTO_INCREMENT , nome VARCHAR(255) NOT NULL , sexo INT NULL , departamento VARCHAR(255) NULL , PRIMARY KEY (idPessoa));";
+    "CREATE TABLE pessoa(idPessoa INT PRIMARY KEY AUTO_INCREMENT, nome VARCHAR(255) NOT NULL, sexo INT, departamento VARCHAR(255) )";
 
   const filme_table =
-    "CREATE  TABLE filme ( idFilme INT NOT NULL  , idDiretor INT NOT NULL AUTO_INCREMENT , titulo VARCHAR(45) NOT NULL , ano VARCHAR(255) NOT NULL , nota DOUBLE NOT NULL, popularidade INT NOT NULL, PRIMARY KEY (idFilme) ,CONSTRAINT fk_filme_diretor1 FOREIGN KEY (idDiretor ) REFERENCES pessoa (idPessoa ));";
+    "CREATE TABLE filme(idFilme INT PRIMARY KEY AUTO_INCREMENT, idDiretor INT, titulo VARCHAR(255), ano VARCHAR(255), data VARCHAR(255), nota DOUBLE, popularidade INT)";
 
   const elenco_table =
-    "CREATE  TABLE elenco ( idFilme INT NOT NULL , idAtor INT NOT NULL , PRIMARY KEY (idFilme, idAtor) , CONSTRAINT fk_elenco_filme FOREIGN KEY (idFilme ) REFERENCES filme (idFilme ), CONSTRAINT fk_elenco_ator FOREIGN KEY (idAtor ) REFERENCES pessoa (idPessoa ));";
+    "CREATE  TABLE elenco ( idDiretor INT PRIMARY KEY, idAtor INT PRIMARY KEY";
 
   con.query(pessoa_table, function (err, result) {
     if (err) throw err;
