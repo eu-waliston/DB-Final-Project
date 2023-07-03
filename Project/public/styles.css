@@ -8,7 +8,7 @@
 }
 
 :root {
-  ---background-default: #006987;
+  ---background-default: #124060;
 }
 
 .container {
@@ -26,21 +26,20 @@
   z-index: 5;
 }
 
-.img-sql {
-  width: 300px;
-}
 
 .left--menu-itens {
   display: grid;
   justify-content: center;
   gap: 50px;
   position: relative;
-  top: 50px;
+  top: 150px;
 }
 
 form {
   display: grid;
-  gap: 20px;
+  gap: 50px;
+  position: relative;
+  left: -30px;
 }
 
 .left--menu-itens h1 {
@@ -48,6 +47,7 @@ form {
   text-transform: uppercase;
   color: #fff;
   font-size: 2.5rem;
+  text-align: center;
 }
 .left--menu-itens button {
   height: 40px;
@@ -74,7 +74,7 @@ form {
   color: #fff;
   text-align: center;
   position: relative;
-  top: 22%;
+  top: 50%;
 }
 
 /*================ dashboard container ==============*/
@@ -95,7 +95,7 @@ form {
   color: var(---background-default);
 }
 .icon {
-  width: 100px;
+  width: 80px;
   position: relative;
   top: 20px;
 }
