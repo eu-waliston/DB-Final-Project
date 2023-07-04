@@ -20,7 +20,7 @@ operationsRouter.get("/data", async (req, res) => {
     getMovieData(random);
     getPersonData(random);
 
-    res.status(200).sendFile(path.join(__dirname, "..", "public", "home.html"));
+    res.status(200).sendFile(path.join(__dirname, "..", "public", "home.ejs"));
   } catch (error) {
     console.log({ message: error });
   }
