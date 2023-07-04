@@ -1,5 +1,6 @@
 const con = require("../config/DB");
 const path = require("path");
+const fs = require("fs");
 
 const { createTable, createDB } = require("../oprtations/create");
 const {
@@ -8,6 +9,17 @@ const {
   getPersonData,
 } = require("../oprtations/getData");
 const { insertData } = require("../oprtations/insert");
+
+let info = [];
+
+fs.readFile("./data/infos.json", (err, data) => {
+  if (err) {
+    console.log({ message: err });
+  } else {
+    let infos = JSON.parse(data);
+    info.push(infos);
+  }
+});
 
 const express = require("express");
 const operationsRouter = express.Router();
@@ -20,7 +32,9 @@ operationsRouter.get("/data", async (req, res) => {
     getMovieData(random);
     getPersonData(random);
 
-    res.status(200).render(path.join(__dirname, "..", "public", "home.ejs"));
+    res.status(200).render(path.join(__dirname, "..", "public", "home.ejs"), {
+      info: info,
+    });
   } catch (error) {
     console.log({ message: error });
   }
@@ -29,7 +43,9 @@ operationsRouter.get("/data", async (req, res) => {
 operationsRouter.get("/create", async (req, res) => {
   try {
     createTable();
-    res.status(200).render(path.join(__dirname, "..", "public", "home.ejs"));
+    res.status(200).render(path.join(__dirname, "..", "public", "home.ejs"), {
+      info: info,
+    });
   } catch (error) {
     console.log({ message: error });
   }
@@ -38,7 +54,9 @@ operationsRouter.get("/create", async (req, res) => {
 operationsRouter.get("/createDB", async (req, res) => {
   try {
     createDB();
-    res.status(200).render(path.join(__dirname, "..", "public", "home.ejs"));
+    res.status(200).render(path.join(__dirname, "..", "public", "home.ejs"), {
+      info: info,
+    });
   } catch (error) {
     console.log({ message: error });
   }
@@ -47,7 +65,9 @@ operationsRouter.get("/createDB", async (req, res) => {
 operationsRouter.get("/insert", async (req, res) => {
   try {
     insertData();
-    res.status(200).render(path.join(__dirname, "..", "public", "home.ejs"));
+    res.status(200).render(path.join(__dirname, "..", "public", "home.ejs"), {
+      info: info,
+    });
   } catch (error) {
     console.log({ message: error });
   }
