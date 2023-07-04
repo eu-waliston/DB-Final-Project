@@ -47,7 +47,7 @@ operationsRouter.get("/createDB", async (req, res) => {
 operationsRouter.get("/insert", async (req, res) => {
   try {
     insertData();
-    res.status(200).sendFile(path.join(__dirname, "..", "public", "home.ejs"));
+    res.status(200).render(path.join(__dirname, "..", "public", "home.ejs"));
   } catch (error) {
     console.log({ message: error });
   }
