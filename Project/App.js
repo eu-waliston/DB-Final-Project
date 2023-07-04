@@ -1,6 +1,7 @@
 const PORT = 8000;
 const expres = require("express");
 const app = expres();
+const cors = require("cors")
 
 //midlewares
 app.use(expres.json());
@@ -9,6 +10,8 @@ app.use(expres.urlencoded({ extended: true }));
 //Static Files
 app.use(expres.static("public"));
 app.set("view engine", "ejs");
+app.use(cors())
+
 
 //DB Connection
 const con = require("./config/DB");

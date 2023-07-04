@@ -1,12 +1,39 @@
 <div class="dasboard">
-    <div class="charts--container">
-      <h1><img src="images/gifs-de-engrenagem-1.gif" alt="icon" class="icon">Dashboard.</h1>
-      <div class="chart-iten-1">
-        <canvas id="myChart"></canvas>
-        <canvas id="myChart3"></canvas>
-      </div>
-      <div class="chart-iten-2">
-        <canvas id="myChart2"></canvas>
+  <div class="charts--container">
+    <h1 class="dash-h1">
+      <img
+        src="images/gifs-de-engrenagem-1.gif"
+        alt="icon"
+        class="icon"
+      />Dashboard.
+    </h1>
+    <div class="chart-iten-1">
+      <canvas id="myChart"></canvas>
+      <canvas id="myChart3"></canvas>
+    </div>
+    <div class="chart-iten-2">
+      <canvas id="myChart2"></canvas>
+    </div>
+    <div class="aditional--infos">
+      <h1 class="ad-h1">Informações Adicionais.</h1>
+      <div class="infos-container">
+        <div class="quadro">
+          <% info[0].forEach(function(filmes) { %>
+          <div class="infos--ss">
+            
+            <div><img src="<%= filmes.Images[0] %>" alt="logo" class="logo" /></div>
+            <div>
+              <h2>Titulo: <%= filmes.Title %></h2>
+              <p>Idioma: <%= filmes.Language %></p>
+              <p>Pais: <%= filmes.Country %></p>
+              <p>Oscars: <%= filmes.Awards %></p>
+              <p>Atores: <%= filmes.Actors %></p>
+              <p>Diretor: <%= filmes.Director %></p>
+            </div>
+          </div>
+          <% }); %>
+        </div>
       </div>
     </div>
+  </div>
 </div>
