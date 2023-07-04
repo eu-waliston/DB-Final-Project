@@ -29,7 +29,7 @@ operationsRouter.get("/data", async (req, res) => {
 operationsRouter.get("/create", async (req, res) => {
   try {
     createTable();
-    res.status(200).sendFile(path.join(__dirname, "..", "public", "home.ejs"));
+    res.status(200).render(path.join(__dirname, "..", "public", "home.ejs"));
   } catch (error) {
     console.log({ message: error });
   }
