@@ -1,3 +1,150 @@
-h1 {
-  color: red;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  ---background-default: #124060;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+.container .left--menu {
+  position: fixed;
+  height: 100vh;
+  width: 400px;
+  background-color: var(---background-default);
+  z-index: 5;
+}
+.container .left--menu p {
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: 50%;
+}
+.container .left--menu .left--menu-itens {
+  display: grid;
+  justify-content: center;
+  gap: 50px;
+  position: relative;
+  top: 150px;
+}
+.container .left--menu .left--menu-itens h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.container .left--menu .left--menu-itens form {
+  display: grid;
+  gap: 50px;
+  position: relative;
+  left: -30px;
+}
+.container .left--menu .left--menu-itens form button {
+  height: 40px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  position: relative;
+  left: 25%;
+  color: #006987;
+}
+.container .left--menu .left--menu-itens form button:hover {
+  opacity: 0.9;
+  color: #034a5e;
+}
+.container .left--menu .left--menu-itens form button:active {
+  transform: translateY(3px);
+}
+.container .dasboard {
+  background-color: #ffffff;
+  float: right;
+  height: 100vh;
+  width: 78.5%;
+}
+.container .dasboard .charts--container .dash-h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  color: var(---background-default);
+}
+.container .dasboard .charts--container .icon {
+  width: 80px;
+  position: relative;
+  top: 20px;
+}
+.container .dasboard .charts--container .chart-iten-1 {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top: 50px;
+}
+.container .dasboard .charts--container .chart-iten-1 #myChart,
+.container .dasboard .charts--container .chart-iten-1 #myChart3 {
+  width: 400px !important;
+  height: 400px !important;
+}
+.container .dasboard .charts--container .chart-iten-2 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 150px;
+}
+.container .dasboard .charts--container .chart-iten-2 #myChart2 {
+  width: 800px !important;
+  height: 500px !important;
+}
+.container .dasboard .charts--container .aditional--infos {
+  position: relative;
+  margin-top: 200px;
+  float: right;
+  height: 150vh;
+  width: 100%;
+}
+.container .dasboard .charts--container .aditional--infos .ad-h1 {
+  text-align: center;
+  color: var(---background-default);
+  position: relative;
+  margin-top: 20px;
+}
+.container .dasboard .charts--container .aditional--infos .quadro {
+  display: grid;
+  grid-template-columns: repeat(2, 40%);
+  gap: 30px;
+  justify-content: center;
+  text-align: left;
+  position: relative;
+  top: 150px;
+}
+.container .dasboard .charts--container .aditional--infos .quadro .infos--ss {
+  display: flex;
+}
+.container .dasboard .charts--container .aditional--infos .quadro p {
+  color: var(---background-default);
+}
+.container .dasboard .charts--container .aditional--infos .quadro h2 {
+  color: var(---background-default);
+  font-size: 1.4rem;
+}
+.container .dasboard .charts--container .aditional--infos .quadro .logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+  margin-right: 30px;
+}
+.container .dasboard .charts--container .aditional--infos .quadro .logo:hover {
+  transition: 0.8s;
+  transform: scale(3);
+  border-radius: 10px;
 }
