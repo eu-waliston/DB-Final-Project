@@ -30,7 +30,7 @@ filmes.
     - HTML
     - CSS
     - MySQL
-    - Sass
+    - Scss
 
 ### Authors
 
