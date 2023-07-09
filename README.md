@@ -32,6 +32,3 @@ filmes.
     - MySQL
     - Scss
 
-### Authors
-
-- [We Santos](https://github.com/wal-wizard)
